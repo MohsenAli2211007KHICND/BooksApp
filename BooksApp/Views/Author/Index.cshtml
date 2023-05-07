@@ -1,0 +1,55 @@
+﻿@model List<Author>
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2>Author list</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Author" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Add New Author
+            </a>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Published Books</th>
+            <th>Populer Book</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.FirstName  @author.LastName</td>
+                <td>@author.Age</td>
+                <td>@author.Email</td>
+                <td>@author.City</td>
+                <td>@author.PublishedBook</td>
+                <td>@author.Book.BookTitle</td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Author" asp-action="Edit" asp-route-id="@author.Id" class="btn btn-primary mx-2">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a asp-controller="Author" asp-action="Delete" asp-route-id="@author.Id" class="btn btn-danger mx-2">
+                            <i class="bi bi-trash"></i> Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

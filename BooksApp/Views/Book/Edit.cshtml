@@ -1,0 +1,39 @@
+﻿@model Book
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-dark text-center">Update Book</h2>
+            <hr />
+        </div>
+        <div class="mb-3 p-1">
+            <label asp-for="BookTitle" class="p-0"></label>
+            <input asp-for="BookTitle" class="form-control" />
+            <span asp-validation-for="BookTitle" class="text-danger"></span>
+        </div>
+        <div class="mb-3 p-1">
+            <label asp-for="Author" class="p-0"></label>
+            <input asp-for="Author" class="form-control" />
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="mb-3 p-1">
+            <label asp-for="RealeseYear" class="p-0"></label>
+            <input asp-for="RealeseYear" class="form-control" />
+            <span asp-validation-for="RealeseYear" class="text-danger"></span>
+        </div>
+        <div class="mb-3 p-1">
+            <label asp-for="Pages" class="p-0"></label>
+            <input asp-for="Pages" class="form-control" />
+            <span asp-validation-for="Pages" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Update book</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Book" asp-action="Index" class="btn btn-outline-info form-control">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
+
